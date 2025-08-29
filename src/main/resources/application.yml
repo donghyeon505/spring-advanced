@@ -1,8 +1,10 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   datasource:
-    url: jdbc:mysql://localhost:3306/test
-    username: root
-    password: 1111
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -14,4 +16,4 @@ spring:
 
 jwt:
   secret:
-    key: "SdQw27fc3QMwfXk57ytKJZQ3U44SS4//0dPucbkgfrY="
+    key: ${JWT_TOKEN}
